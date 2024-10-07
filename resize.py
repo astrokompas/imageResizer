@@ -2,6 +2,8 @@ import os
 import glob
 from PIL import Image
 
+Image.MAX_IMAGE_PIXELS = None
+
 def resize_image(input_image_path, output_image_path, max_width, max_height, output_format=None, quality=85):
     original_size = os.path.getsize(input_image_path)
     with Image.open(input_image_path) as img:
